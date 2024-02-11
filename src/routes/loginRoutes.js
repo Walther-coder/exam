@@ -22,6 +22,8 @@ logRoutes.get('/', (req, res) => {
                 req.session.save(() => {
                     res.json({ msg: 'Вы успешно авторизовались!' });
                 });
+            }else{
+                res.json({err: 'Пароль не верный!'});
             }
             } else {
             res.json({ err: 'Такой пользователь не найден!' });
